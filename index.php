@@ -99,7 +99,7 @@
 				<li class="nav-item"><a href="channels.php" class="nav-link link-light px-2"><svg class="bi" width="16" height="16" fill="currentColor">
 	<use xlink:href="icons.svg#people"/>
 </svg> Channels</a></li>
-									<li class="nav-item"><a href="https://web.archive.org/web/20210803175351/https://github.com/chazizsquarebracket/squarebracket" class="nav-link link-light px-2"><svg class="bi" width="16" height="16" fill="currentColor">
+									<li class="nav-item"><a href="https://github.com/ky-1/tictac" class="nav-link link-light px-2"><svg class="bi" width="16" height="16" fill="currentColor">
 	<use xlink:href="icons.svg#github"/>
 </svg> GitHub</a></li>
 							</ul>
