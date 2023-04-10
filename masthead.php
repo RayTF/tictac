@@ -1,6 +1,6 @@
 <nav id="navbar" class="navbar  navbar-light bg-light  navbar-static-top navbar-expand-md">
 		<div class="container">
-			<a class="navbar-brand" href="."><img src="logo.png" alt="ticTac" height="32" class="d-inline-block align-text-top"></a>
+			<a class="navbar-brand" href="."><img src="logoshort.png" alt="Quadium" height="32" class="d-inline-block align-text-top"></a>
 			<form class="d-flex" method="GET" action="search.php">
 			<div class="input-group">
 			        <span class="input-group-text" id="basic-addon1"><svg class="bi" width="16" height="16" fill="currentColor">
@@ -27,12 +27,14 @@
 			    $result = $statement->get_result();
 			    if($result->num_rows === 0) exit('No rows');
 			    while($row = $result->fetch_assoc()) {
-			        echo '<li class="nav-item dropdown">
+			        echo '
+                    <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                      <img src="content/pfp/default" style="border-radius: 5px;" width="32px" height="32px">
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Logged in as <b>'.$row['username'].'</b></a></li>
+                      <li><a class="dropdown-item" href="upload.php"><svg width="15" height="15" fill="currentColor"><use xlink:href="icons.svg#upload"/></svg> Upload</a>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="user.php?name='.$row['username'].'">Your Channel</a></li>
                       <li><a class="dropdown-item" href="logout.php">Logout</a></li>

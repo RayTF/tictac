@@ -21,6 +21,7 @@
 <div class="mb-4">
 	</div>
     <?php
+    $rows = getSubscribers($_GET['name'], $mysqli);
                     $statement = $mysqli->prepare("SELECT * FROM `users` WHERE `username` = ? LIMIT 1");
                     $statement->bind_param("s", $_GET['name']);
                     $statement->execute();
@@ -70,16 +71,16 @@
                             if(isset($_SESSION['profileuser3'])) {
                                 if(ifSubscribed($_SESSION['profileuser3'], $_GET['name'], $mysqli) == false) {
                                echo '<div class="col-md-2">
-                               <a href="subscribe.php?name='.$_GET['name'].'" id="subscribe" class="btn btn-danger" type="button">Subscribe</a>
+                               <a href="subscribe.php?name='.$_GET['name'].'" id="subscribe" class="btn btn-warning" type="button">Subscribe <span class="badge bg-dark text-bg-secondary">'.$rows.'</span></a>
                            </div>';
                                } else { 
                                 echo '<div class="col-md-2">
-                                <a href="unsubscribe.php?name='.$_GET['name'].'" id="subscribe" class="btn btn-secondary" type="button">Unsubscribe</a>
+                                <a href="unsubscribe.php?name='.$_GET['name'].'" id="subscribe" class="btn btn-secondary" type="button">Unsubscribe <span class="badge bg-dark text-bg-secondary">'.$rows.'</span></a>
                             </div>';
                                  } 
                                 } else {
                                     echo '<div class="col-md-2">
-                                    <a id="subscribe" class="btn btn-danger" type="button" disabled>Subscribe</a>
+                                    <a id="subscribe" class="btn btn-warning" type="button" disabled>Subscribe <span class="badge bg-dark text-bg-secondary">'.$rows.'</span></a>
                                 </div>';
                                 }
                                  ?>
@@ -115,7 +116,7 @@
 				</a>
 			</div>
 			<div class="col-6">
-				<h3><a href="watch.php?v=ZT--ADM3A_Z">'.$row['videotitle'].'</a></h3>
+				<h3><a href="watch.php?v='.$row['vid'].'">'.$row['videotitle'].'</a></h3>
 																					<p>			<a class="user" href="user.php?name='.$row['author'].'">'.$row['author'].'</a> &bull; '.$row['views'].' views	&bull;
 				<span class="text-muted">'.$upload.'</span></p>
 				<p>'.$row['description'].'</p>
