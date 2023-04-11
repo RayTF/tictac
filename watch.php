@@ -37,6 +37,9 @@
         } else {
             $verified = '';
         }
+        include("static/lib/profile.php");
+        $likec = getLikes($_GET['v'], $mysqli);
+        $dislikec = getDislikes($_GET['v'], $mysqli);
     }?>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 </head>
@@ -89,7 +92,7 @@ while($row = $result->fetch_assoc()) {
 							<div class="row">
 								<div class="col-lg-2" style="width:10%;padding-right:0">
 									<a href="user.php?name='.$row['author'].'">
-										<img class="float-start rounded-circle w-100" src="content/pfp/default">
+										<img class="float-start rounded-circle w-100" src="content/pfp/'.getUserPic($row['author']).'">
 									</a>
 								</div>
 								<div class="col-lg-10">
@@ -99,14 +102,32 @@ while($row = $result->fetch_assoc()) {
 							</div>
 						</div>
 						<div class="col-3 text-end">
-							<a href="#" id="action_unlogged" class="text-success"><svg class="bi" width="20" height="20" fill="currentColor">
+							<a href="like.php?v='.$_GET['v'].'" id="action_unlogged" class="text-success"><svg class="bi" width="20" height="20" fill="currentColor">
 								<use xlink:href="icons.svg#hand-thumbs-up-fill"/>
-							</svg></a> <span id="likes">1</span>
-							<a href="#" id="action_unlogged" class="text-danger"><svg class="bi" width="20" height="20" fill="currentColor">
+							</svg></a> <span id="likes">'.$likec.'</span>
+							<a href="dislike.php?v='.$_GET['v'].'" id="action_unlogged" class="text-danger"><svg class="bi" width="20" height="20" fill="currentColor">
 								<use xlink:href="icons.svg#hand-thumbs-down-fill"/>
-							</svg></a> <span id="dislikes" style="padding-right: 10px">1</span>
-							<button id="subscribe" class="btn btn-danger" type="button" disabled>Subscribe</button>
-							</div>
+							</svg></a> <span id="dislikes" style="padding-right: 10px">'.$dislikec.'</span>');
+                             if($row['author'] == $_SESSION['profileuser3']) {
+                                echo '
+                                <a href="account.php" id="editprof" class="btn btn-primary" type="button">Edit Profile</a>';
+                            } else {
+                        if(isset($_SESSION['profileuser3'])) {
+                            if(ifSubscribed($_SESSION['profileuser3'], $row['author'], $mysqli) == false) {
+                           echo '
+                           <a href="subscribe.php?name='.$row['author'].'" id="subscribe" class="btn btn-warning" type="button">Subscribe</a>';
+                           } else { 
+                            echo '
+                            <a href="unsubscribe.php?name='.$row['author'].'" id="subscribe" class="btn btn-secondary" type="button">Unsubscribe</a>
+                        ';
+                             } 
+                            } else {
+                                echo'
+                                <a id="subscribe" class="btn btn-warning" type="button" disabled>Subscribe</a>
+                            ';
+                            }
+                        }
+							echo('</div>
 						<p style="margin-top: 1rem;">'.$row['description'].'</p>
 					</div>
 				</div>

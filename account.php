@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Upload - Quadium</title>
+	<title>Edit Profile - Quadium</title>
 </head>
 <style>
 	.bi {

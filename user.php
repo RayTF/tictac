@@ -81,7 +81,11 @@
 						<div class="fs-4">@'.$row['username'].'</div>
 					<p class="fs-6 text-break">'.$row['description'].'</p>
 				</div>';}?>
-                 <?php 
+                 <?php if($_GET['name'] == $_SESSION['profileuser3']) {
+                                    echo '<div class="col-md-2">
+                                    <a href="account.php" id="editprof" class="btn btn-primary" type="button">Edit Profile</a>
+                                </div>';
+                                } else {
                             if(isset($_SESSION['profileuser3'])) {
                                 if(ifSubscribed($_SESSION['profileuser3'], $_GET['name'], $mysqli) == false) {
                                echo '<div class="col-md-2">
@@ -97,6 +101,7 @@
                                     <a id="subscribe" class="btn btn-warning" type="button" disabled>Subscribe <span class="badge bg-dark text-bg-secondary">'.$rows.'</span></a>
                                 </div>';
                                 }
+                            }
                                  ?>
                                  <?php echo'
 			</div>
