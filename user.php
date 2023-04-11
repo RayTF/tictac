@@ -75,7 +75,7 @@
 		<div class="container py-4">
 			<div class="row">
 				<div class="col-md-10">
-					<img class="float-start rounded-circle me-3" src="content/pfp/default" width="150" alt="pfp">
+					<img class="float-start rounded-circle me-3" src="content/pfp/'.getUserPic($row['username']).'" width="150" alt="pfp">
 					<h1 class="align-top fw-bold mb-0">
                     '.$display.''.$verified.''.$admin.''.$rare.'</h1>
 						<div class="fs-4">@'.$row['username'].'</div>
@@ -125,7 +125,7 @@
 			<div class="col-4">
 				<a href="watch.php?v=ZT--ADM3A_Z">
 					<div class="img-thumbnail">
-						<img class="img-fluid" src="content/thumb/'.$row['vid'].'.jpg">
+						<img class="img-fluid" src="content/thumb/'.$row['thumb'].'">
 					</div>
 				</a>
 			</div>

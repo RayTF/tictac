@@ -1,5 +1,6 @@
 content/video/
 content/thumb/
 content/unprocessed/
+content/pfp/
 *.mp4
 config.php

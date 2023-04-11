@@ -30,13 +30,14 @@
 			        echo '
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     <img src="content/pfp/default" style="border-radius: 5px;" width="32px" height="32px">
+                     <img src="content/pfp/'.getUserPic($_SESSION['profileuser3']).'" style="border-radius: 5px;" width="32px" height="32px">
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Logged in as <b>'.$row['username'].'</b></a></li>
+                      <li><a class="dropdown-item" href="#">@<b>'.$row['username'].'</b></a></li>
                       <li><a class="dropdown-item" href="upload.php"><svg width="15" height="15" fill="currentColor"><use xlink:href="icons.svg#upload"/></svg> Upload</a>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="user.php?name='.$row['username'].'">Your Channel</a></li>
+                      <li><a class="dropdown-item" href="account.php">Edit Profile</a></li>
                       <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                     </ul>
                   </li>
