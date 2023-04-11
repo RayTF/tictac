@@ -34,11 +34,12 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">@<b>'.$row['username'].'</b></a></li>
-                      <li><a class="dropdown-item" href="upload.php"><svg width="15" height="15" fill="currentColor"><use xlink:href="icons.svg#upload"/></svg> Upload</a>
                       <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="user.php?name='.$row['username'].'">Your Channel</a></li>
-                      <li><a class="dropdown-item" href="account.php">Edit Profile</a></li>
-                      <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                      <li><a class="dropdown-item" href="upload.php"><svg width="15" height="15" fill="currentColor"><use xlink:href="icons.svg#upload"/></svg> Upload</a>
+                      <li><a class="dropdown-item" href="user.php?name='.$row['username'].'"><svg width="15" height="15" fill="currentColor"><use xlink:href="icons.svg#person-circle"/></svg> Your Channel</a></li>
+                      <li><a class="dropdown-item" href="account.php"><svg width="15" height="15" fill="currentColor"><use xlink:href="icons.svg#pencil-square"/></svg> Edit Profile</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="logout.php"><svg width="15" height="15" fill="currentColor"><use xlink:href="icons.svg#door-open"/></svg> Logout</a></li>
                     </ul>
                   </li>
           ';

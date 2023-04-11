@@ -16,13 +16,17 @@
 	<div class="col-xl-8">
 				<div class="row">
 			<div class="col-8">
-			<h3>Upload a video</h3>
+			<h3>Edit your channel</h3>
 			</div><div class="col-4">
 			</div>
             <form action="" method="POST" enctype="multipart/form-data">
   <div class="form-floating mb-3">
     <input type="text" class="form-control" name="displayname" id="displayname" aria-describedby="emailHelp">
     <label for="displayname" class="form-label">Display name</label>  
+</div>
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" name="bg" id="bg">
+    <label for="bg" class="form-label">Channel background (must be external URL)</label>  
 </div>
   <div class="form-floating mb-3">
     <textarea class="form-control" class="form-control" name="description" id="description" style="height: 200px"></textarea>
@@ -77,8 +81,16 @@
 					}
                     if(!empty($_POST['displayname'])){
 						$statement = $mysqli->prepare("UPDATE `users` SET `displayname` = ? WHERE `username` = '" . $_SESSION["profileuser3"] . "'");
-					    $statement->bind_param("s", $displayname);
-					    $description = htmlspecialchars($_POST['displayname']);
+					    $statement->bind_param("s", $_POST['displayname']);
+					    $displayname = htmlspecialchars($_POST['displayname']);
+                        $trimmed = substr($displayname, 0, 30);
+					    $statement->execute();
+					    $statement->close();
+					}
+                    if(!empty($_POST['bg'])){
+						$statement = $mysqli->prepare("UPDATE `users` SET `channel_background` = ? WHERE `username` = '" . $_SESSION["profileuser3"] . "'");
+					    $statement->bind_param("s", $_POST['bg']);
+					    $bg = htmlspecialchars($_POST['bg']);
 					    $statement->execute();
 					    $statement->close();
 					}
@@ -88,10 +100,74 @@
 
 			</div>
 	<div class="col-xl-4">
-					<h3>Remember to follow ToS</h3>
-			<p>Make sure your video doesn't violate them! Otherwise, action will be taken on your channel.</p>
-				<hr/>
-                <p class="text-danger">If the page looks like it's loading for a long time, do not leave the page, as the video is processing and it will stop if you navigate away.
+					<h3>Profile Preview</h3>
+                    <style>
+	.bg-custom-profile {
+  background-image: linear-gradient(#0054b6, #004492 50%, #00316a);
+  color: white;
+}
+.bg-primary {
+  background-image: linear-gradient(#0067df, #0054b6 60%, #004ba2);
+}
+
+	.bg-channel-background {
+	background-image: url("'.$row['channel_background'].'");
+
+	}
+</style>
+                    <?php
+			if(isset($_SESSION['profileuser3'])){
+				$rows = getSubscribers($_SESSION['profileuser3'], $mysqli);
+			    $statement = $mysqli->prepare("SELECT * FROM users WHERE username = ? LIMIT 1");
+			    $statement->bind_param("s", $_SESSION['profileuser3']);
+			    $statement->execute();
+			    $result = $statement->get_result();
+			    if($result->num_rows === 0) exit('No rows');
+			    while($row = $result->fetch_assoc()) {
+					$join = date("F d, Y", strtotime($row["date"]));
+                    if ($row['displayname'] == null) {
+                        $display = $row['username'];
+                    } else {
+                        $display = $row['displayname'];
+                    }
+                    if ($row['is_verified'] == 1) {
+                        $verified = '<svg data-bs-toggle="tooltip" data-bs-placement="top" title="This user is verified." style="margin-left: 0.75%;" class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons.svg#patch-check-fill"/>
+                    </svg>';
+                    } else {
+                        $verified = '';
+                    }
+                    if ($row['is_rare'] == 1) {
+                        $rare = '<svg data-bs-toggle="tooltip" data-bs-placement="top" title="This user has a rare username." style="margin-left: 0.75%;" class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons.svg#type"/>
+                    </svg>';
+                    } else {
+                        $rare = '';
+                    }
+                    if ($row['is_admin'] == 1) {
+                        $admin = '<svg data-bs-toggle="tooltip" data-bs-placement="top" title="This user is a Quadium admin." style="margin-left: 0.75%;" class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons.svg#person-badge"/>
+                    </svg>';
+                    } else {
+                        $admin = '';
+                    }
+			        echo '
+                    <div class="bg-channel-background">
+	<div class="col-12 mb-2 mt-0">
+	<div class="p-1 bg-custom-profile text-white">
+		<div class="container py-4">
+			<div class="row">
+				<div class="col-md-10">
+					<img class="float-start rounded-circle me-3" src="content/pfp/'.getUserPic($_SESSION['profileuser3']).'" width="150" height="150" alt="pfp">
+					<h1 class="align-top fw-bold mb-0">
+                    '.$display.''.$verified.''.$admin.''.$rare.'</h1>
+						<div class="fs-4">@'.$row['username'].'</div>
+					<p class="fs-6 text-break">'.$row['description'].'</p>
+				</div>                                                  
+			</div>
+		</div>
+	</div>
+</div>';}}?>
 			</div>
 </div>
 		</div>
