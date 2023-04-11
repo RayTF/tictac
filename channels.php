@@ -56,7 +56,7 @@ echo '<div class="alert alert-success" role="alert">
 			<div class="col-4">
 				<a href="watch.php?v='.$row['vid'].'">
 					<div class="img-thumbnail">
-						<img class="img-fluid" src="content/thumb/'.$row['thumb'].'">
+						<img class="img-fluid" src="content/thumb/'.$row['vid'].'.jpg">
 					</div>
 				</a>
 			</div>

@@ -14,8 +14,8 @@
 	</script>
 	<link rel="manifest" href="site.webmanifest">
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#fd9814">
-	<meta name="apple-mobile-web-app-title" content="ticTac">
-	<meta name="application-name" content="ticTac">
+	<meta name="apple-mobile-web-app-title" content="Quadium">
+	<meta name="application-name" content="Quadium">
 	<meta name="msapplication-TileColor" content="#fd9814">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#fd9814">

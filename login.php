@@ -80,8 +80,8 @@ body {
                                 }
                             ?>
   <form method="POST" action="">
-    <img class="mb-4" src="logo.png" alt="" width="87" height="57">
-    <h1 class="h3 mb-3 fw-normal">Login to access ticTac</h1>
+    <img class="mb-4" src="logoshort.png" alt="" width="97" height="57">
+    <h1 class="h3 mb-3 fw-normal">Login to access Quadium</h1>
 
     <div class="form-floating">
       <input type="text" name="name" class="form-control" id="name" placeholder="Username">

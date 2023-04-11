@@ -11,7 +11,7 @@
                 if ($row['banned'] == '1') {
                     header("Location: index.php?err=This account has been suspended by ticTac staff<br/>Reason: ".$row['banreason']);
               }else{
-                echo "<title>".$row['username']." - ticTac</title>";
+                echo "<title>".$row['username']." - Quadium</title>";
               }
             }
             $statement->close();
@@ -39,6 +39,20 @@
                         } else {
                             $verified = '';
                         }
+                        if ($row['is_rare'] == 1) {
+                            $rare = '<svg data-bs-toggle="tooltip" data-bs-placement="top" title="This user has a rare username." style="margin-left: 0.75%;" class="bi" width="32" height="32" fill="currentColor">
+							<use xlink:href="icons.svg#type"/>
+						</svg>';
+                        } else {
+                            $rare = '';
+                        }
+                        if ($row['is_admin'] == 1) {
+                            $admin = '<svg data-bs-toggle="tooltip" data-bs-placement="top" title="This user is a Quadium admin." style="margin-left: 0.75%;" class="bi" width="32" height="32" fill="currentColor">
+							<use xlink:href="icons.svg#person-badge"/>
+						</svg>';
+                        } else {
+                            $admin = '';
+                        }
                         echo '
 	<style>
 	.bg-custom-profile {
@@ -63,7 +77,7 @@
 				<div class="col-md-10">
 					<img class="float-start rounded-circle me-3" src="content/pfp/default" width="150" alt="pfp">
 					<h1 class="align-top fw-bold mb-0">
-                    '.$display.''.$verified.'</h1>
+                    '.$display.''.$verified.''.$admin.''.$rare.'</h1>
 						<div class="fs-4">@'.$row['username'].'</div>
 					<p class="fs-6 text-break">'.$row['description'].'</p>
 				</div>';}?>
