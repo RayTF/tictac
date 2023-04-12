@@ -9,7 +9,7 @@
             $result = $statement->get_result();
             while($row = $result->fetch_assoc()) {
                 if ($row['banned'] == '1') {
-                    header("Location: index.php?err=This account has been suspended by ticTac staff<br/>Reason: ".$row['banreason']);
+                    header("Location: index.php?err=This account has been suspended by Quadium staff<br/>Reason: ".$row['banreason']);
               }else{
                 echo "<title>".$row['username']." - Quadium</title>";
               }
@@ -131,7 +131,7 @@
 			<div class="col-4">
 				<a href="watch.php?v='.$row['vid'].'">
 					<div class="img-thumbnail">
-						<img class="img-fluid" src="content/thumb/'.$row['thumb'].'">
+						<img class="img-fluid" width="960" height="540" src="content/thumb/'.$row['thumb'].'">
 					</div>
 				</a>
 			</div>
