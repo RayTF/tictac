@@ -98,7 +98,7 @@ echo '<div class="alert alert-success" role="alert">
         </video>	
     </div>
     <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
-		<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+		<script src="plyr.js"></script>
 		<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL"></script>
         <script>
   const player = new Plyr("#c");
