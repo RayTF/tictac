@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<?php include("config.php"); ?>
+<?php include("static/lib/profile.php"); ?>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
@@ -19,3 +19,4 @@
 	<meta name="msapplication-TileColor" content="#fd9814">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#fd9814">
+	<?php error_reporting(~E_DEPRECATED); ?>

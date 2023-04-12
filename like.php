@@ -1,4 +1,4 @@
-<?php require('config.php'); require("static/lib/profile.php"); ?>
+<?php require("static/lib/profile.php"); ?>
 
 <?php
 $name = $_GET['v'];
@@ -34,5 +34,5 @@ $stmt->execute();
 $stmt->close();
 
 skip:
-header('Location: ' . $_SERVER['HTTP_REFERER'] . ');
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

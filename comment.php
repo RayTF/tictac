@@ -1,6 +1,7 @@
 <?php
 include("config.php");
         if(isset($_POST['submit'])) {
+            if(!empty($_POST['bio'])) {
             if(!isset($_SESSION['profileuser3'])) {
                 die("Please login to comment.");
             }
@@ -15,5 +16,8 @@ include("config.php");
                 
                 header('Location: ' . $_SERVER['HTTP_REFERER']);
             }
+        } else {
+            header('Location: ' . $_SERVER['HTTP_REFERER'] . '&err=Comment cannot be empty.');
+        }
         }
     ?>

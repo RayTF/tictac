@@ -124,11 +124,12 @@
                     if($result->num_rows !== 0){
                     while($row = $result->fetch_assoc()) {
                         $upload = time_elapsed_string($row['date']);
+                        $views = getViews($row['vid'], $mysqli); 
                         echo '<div class="card" style="margin-bottom:10px">
 	<div class="card-body">
 		<div class="row">
 			<div class="col-4">
-				<a href="watch.php?v=ZT--ADM3A_Z">
+				<a href="watch.php?v='.$row['vid'].'">
 					<div class="img-thumbnail">
 						<img class="img-fluid" src="content/thumb/'.$row['thumb'].'">
 					</div>

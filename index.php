@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-<?php include('static/lib/profile.php'); ?>
 	<title>Home - Quadium</title>
 </head>
 <style>
@@ -74,14 +73,14 @@ echo '<div class="alert alert-success" role="alert">
 			</div>
 	<div class="col-xl-4">
 					<h3>Welcome to Quadium</h3>
-			<p>I can't believe it's not RevTube!</p>
+			<p>I can't believe it's not squareBracket</p>
 				<hr/>
 		<h3>News and updates</h3>
-		<p>This is that one shitty website that I never finished from 2022, except it's not shitty now!</p>
+		<p>Quadium is pretty much finished now. It's now a finished version of the prototype named "RockTube" from February 2022.</p>
 		<p class="blockquote-footer">crazyassfella</p>
 		<figure>
 		  <blockquote class="blockquote">
-		    <p>when will you stop making shitty youtube clones??? get a life and touch grass you retard</p>
+		    <p>Ok</p>
 		  </blockquote>
 		  <figcaption class="blockquote-footer">
 		    msnaero, on <cite title="crazyassfella's direct messages">crazyassfella's direct messages</cite>

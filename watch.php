@@ -37,7 +37,6 @@
         } else {
             $verified = '';
         }
-        include("static/lib/profile.php");
         $likec = getLikes($_GET['v'], $mysqli);
         $dislikec = getDislikes($_GET['v'], $mysqli);
         $views = getViews($_GET['v'], $mysqli); 
@@ -163,18 +162,19 @@ echo '<div class="alert alert-success" role="alert">
 		</div> <!-- WATCH VIDEO BOX -->'); $stmt->close();}?><br>
 		<div class="card">
 				<div class="card-body">
-				<h5>Comments</h5><hr class="mt-2 mb-3"/>
-				<div class="mt-1">
-					<form action="comment.php?v=<?php echo $_GET['v']; ?>" method="POST">
-					<textarea class="form-control mt-2 mb-2" name="bio" id="commentContents" style="overflow:hidden;resize:none" rows="3" placeholder="<?php echo $commentplaceholder; ?>"></textarea>
-					<?php echo $commentbutton; ?>	
-				</form>
-		<?php
-        $stmt = $mysqli->prepare("SELECT * FROM comments WHERE tovideoid = ?");
+				<?php
+        $stmt = $mysqli->prepare("SELECT * FROM comments WHERE tovideoid = ? ORDER BY date DESC");
         $stmt->bind_param("s", $_GET['v']);
         $stmt->execute();
         $result = $stmt->get_result();
         if($result->num_rows === 0) echo('No comments.');
+		$count = $result->num_rows;
+		echo '<h5>'.$count.' Comments</h5><hr class="mt-2 mb-3"/>
+				<div class="mt-1">
+					<form action="comment.php?v='.$_GET['v'].'" method="POST">
+					<textarea class="form-control mt-2 mb-2" name="bio" id="commentContents" style="overflow:hidden;resize:none" rows="3" placeholder="'.$commentplaceholder.'"></textarea>
+					'.$commentbutton.'	
+				</form>';
         while($row = $result->fetch_assoc()) {
 			$cd = time_elapsed_string($row['date']);
 		echo'
@@ -193,25 +193,34 @@ echo '<div class="alert alert-success" role="alert">
 ';}?>
 </div></div></div></div>
 	<div class="col-lg-3">
+	<?php
+		$statement = $mysqli->prepare("SELECT * FROM videos ORDER BY RAND() LIMIT 6");
+                //$statement->bind_param("s", $_POST['fr']); i have no idea what this is but we don't need it
+                $statement->execute();
+                $result = $statement->get_result();
+                if($result->num_rows !== 0){
+                    while($row = $result->fetch_assoc()) {
+						$upload = time_elapsed_string($row['date']);
+						$views = getViews($row['vid'], $mysqli); 
+                        echo '
 					<div class="card" style="margin-bottom:10px">
 	<div class="card-body">
 		<div class="row">
 			<div class="col-5">
-				<a href="watch.php?v=_G-0ZTV__-Z">
+				<a href="watch.php?v='.$row['vid'].'">
 					<div class="img-thumbnail" style="margin-bottom:0">
-						<img class="img-fluid" src="/web/20210827010404im_/https://squarebracket.veselcraft.ru/assets/thumb/_G-0ZTV__-Z.png">
+						<img class="img-fluid" src="content/thumb/'.$row['thumb'].'">
 					</div>
 				</a>
 			</div>
 			<div class="col-7">
-				<h5><a href="watch.php?v=_G-0ZTV__-Z">pagination test, move along.</a></h5>
-																					<p>			<a class="user" href="user.php?name=Gamerappa">Gamerappa</a> &bull; 44 views &bull; 1 month ago</p>
+				<h5><a href="watch.php?v='.$row['vid'].'">'.$row['videotitle'].'</a></h5>
+																					<p>			<a class="user" href="user.php?name='.$row['author'].'">'.$row['author'].'</a> &bull; '.$views.' views &bull; '.$upload.'</p>
 			</div>
 		</div>
 	</div>
-</div>
-			</div>
-</div>
+</div>';}}?>
+</div></div>
 		</div>
 		<?php include("footer.php"); ?>
 </body>

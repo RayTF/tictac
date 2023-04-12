@@ -1,3 +1,4 @@
+<?php include("config.php"); ?>
 <?php
 function getUserFromId($id, $connection) {
         $stmt = $connection->prepare("SELECT * FROM users WHERE id = ?");
