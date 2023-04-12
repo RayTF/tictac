@@ -21,6 +21,7 @@
 			<div class="text-end"><a href="my_videos.php" class="btn btn-light btn-sm">Video manager</a></div>
 			</div>
             <?php
+            ini_set('max_execution_time', '0');
     if(!isset($_SESSION['profileuser3'])) {
         echo('<script>
              window.location.href = "index.php";
@@ -92,11 +93,11 @@
            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                rename("$target_file", "content/unprocessed/$v_id.mp4");
                $new_target_file = "content/unprocessed/$v_id.mp4";
-               exec("$ffmpeg -i ".$new_target_file." -vf scale=1280x720 -c:v libx264 -b:a 128k  -c:a aac -ar 22050 content/video/$v_id.mp4");
+               exec("$ffmpeg -i ".$new_target_file." -vf scale=960x540 -c:v libx264 -b:a 128k  -c:a aac -ar 22050 content/video/$v_id.mp4");
                $processed_file = "content/video/$v_id.mp4";
                unlink("content/unprocessed/$v_id.mp4");
                $target_thumb = "content/thumb/".$v_id.".jpg";
-               $thumbcmd = "$ffmpeg -i $processed_file -vf \"thumbnail\" -frames:v 1 -s 1280x720 $target_thumb";
+               $thumbcmd = "$ffmpeg -i $processed_file -vf \"thumbnail\" -frames:v 1 -s 960x540 $target_thumb";
                $video = $_POST['videotitle'];
                $user = $_SESSION['profileuser3'];
              //  $v_id = randstr(11);

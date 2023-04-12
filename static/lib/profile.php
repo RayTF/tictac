@@ -23,7 +23,7 @@ function getUserFromId($id, $connection) {
 // return $user;
 // }
 
-function removeLike($vid, $sender, $reciever, $mysqli) {
+function removeLike($sender, $reciever, $mysqli) {
     $stmt = $mysqli->prepare("DELETE FROM likes WHERE sender = ? AND reciever = ?");
     $stmt->bind_param("ss", $sender, $reciever);
     $stmt->execute();
@@ -131,13 +131,13 @@ function logDB($text, $mysqli) {
     $stmt->close();
 }
 
-function addView($vidid, $user, $conn) {
-    $stmt = $conn->prepare("SELECT * FROM views WHERE viewer = ? AND videoid = ?");
+function addView($vidid, $user, $mysqli) {
+    $stmt = $mysqli->prepare("SELECT * FROM views WHERE viewer = ? AND videoid = ?");
     $stmt->bind_param("ss", $user, $vidid);
     $stmt->execute();
     $result = $stmt->get_result();
     if($result->num_rows === 0) {
-        addViewReal($vidid, $user, $conn);
+        addViewReal($vidid, $user, $mysqli);
     }
     $stmt->close();
 }
@@ -381,15 +381,15 @@ function getDislikes($id, $mysqli) {
     return $dislikes;
 }
 
-function getViews($vidid, $connection) {
-    $stmt = $connection->prepare("SELECT * FROM views WHERE videoid = ?");
+function getViews($vidid, $mysqli) {
+    $stmt = $mysqli->prepare("SELECT * FROM views WHERE videoid = ?");
     $stmt->bind_param("s", $vidid);
     $stmt->execute();
     $result = $stmt->get_result();
-    $rows = mysqli_num_rows($result); 
+    $views = mysqli_num_rows($result); 
     $stmt->close();
 
-    return $rows;
+    return $views;
 }
 
 function getDislikesFromBlog($id, $connection) {

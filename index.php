@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
+<?php include('static/lib/profile.php'); ?>
 	<title>Home - Quadium</title>
 </head>
 <style>
@@ -49,6 +50,7 @@ echo '<div class="alert alert-success" role="alert">
                 if($result->num_rows !== 0){
                     while($row = $result->fetch_assoc()) {
 						$upload = time_elapsed_string($row['date']);
+						$views = getViews($row['vid'], $mysqli); 
                         echo '
 					<div class="card" style="margin-bottom:10px">
 	<div class="card-body">
@@ -62,7 +64,7 @@ echo '<div class="alert alert-success" role="alert">
 			</div>
 			<div class="col-6">
 				<h3><a href="watch.php?v='.$row['vid'].'">'.$row['videotitle'].'</a></h3>
-																					<p>			<a class="user" href="user.php?name='.$row['author'].'">'.$row['author'].'</a> &bull; '.$row['views'].' views	&bull;
+																					<p>			<a class="user" href="user.php?name='.$row['author'].'">'.$row['author'].'</a> &bull; '.$views.' views	&bull;
 				<span class="text-muted">'.$upload.'</span></p>
 				<p>'.$row['description'].'</p>
 			</div>

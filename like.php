@@ -1,10 +1,10 @@
-<?php require("config.php"); ?>
-<?php require("static/lib/profile.php"); ?>
+<?php require('config.php'); require("static/lib/profile.php"); ?>
 
 <?php
 $name = $_GET['v'];
 
 if(!isset($_SESSION['profileuser3']) || !isset($_GET['v'])) {
+    header('Location: ' . $_SERVER['HTTP_REFERER'] . '&err=You must login to post a comment.');
     die("You are not logged in or you did not put in an argument");
 }
 
@@ -13,7 +13,7 @@ $stmt->bind_param("ss", $_SESSION['profileuser3'], $name);
     $stmt->execute();
     $result = $stmt->get_result();
     if($result->num_rows === 1) {
-        removeLike($_GET['v'], $_SESSION['profileuser3'], $name, $mysqli);
+        removeLike($_SESSION['profileuser3'], $name, $mysqli);
         goto skip;
     }
 
@@ -22,7 +22,7 @@ $stmt->bind_param("ss", $_SESSION['profileuser3'], $name);
     $stmt->execute();
     $result = $stmt->get_result();
     if($result->num_rows === 1) {
-        removeLike($_SESSION['profileuser3'], $name, $conn);
+        removeLike($_SESSION['profileuser3'], $name, $mysqli);
         goto skip;
     }
 $stmt->close();
@@ -34,5 +34,5 @@ $stmt->execute();
 $stmt->close();
 
 skip:
-header('Location: ' . $_SERVER['HTTP_REFERER']);
+header('Location: ' . $_SERVER['HTTP_REFERER'] . ');
 ?>
