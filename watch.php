@@ -44,9 +44,11 @@
 		addView($_GET['v'], @$_SESSION['profileuser3'], $mysqli);
 		$commentplaceholder = "Enter your comment here.";
 		$commentbutton = '<div><input style="width:100%;margin-bottom:10px;" type="submit" name="submit" value="Comment" class="btn btn-primary float-end"></div>';
+		$delbutton = '<div><a style="width:100%;margin-bottom:10px;" href="deletevideo.php?v='.$_GET['v'].'" class="btn btn-danger">Delete</a></div>';
 		} else {
 		$commentplaceholder = "Please sign in to comment.";
 		$commentbutton = '<input type="submit" name="submit" value="Comment" class="btn btn-primary float-end" disabled>';
+		$delbutton = '';
 		}
     }?>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
@@ -113,7 +115,7 @@ echo '<div class="alert alert-success" role="alert">
 		<div style="margin-top:5px">
 			<div class="card">
 				<div class="card-body">
-					<h4>'.$row['videotitle'].'</h4><hr class="mt-2 mb-3"/>
+					<h4>'.$row['videotitle'].'</h4> '.$delbutton.'<hr class="mt-2 mb-3"/>
 					<div class="row">
 						<div class="col-lg-9">
 							<div class="row">
