@@ -19,4 +19,4 @@
 	<meta name="msapplication-TileColor" content="#fd9814">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#fd9814">
-	<?php //error_reporting(~E_ALL & ~E_NOTICE); ?>
+	<?php error_reporting(~E_ALL & ~E_NOTICE); ?>
