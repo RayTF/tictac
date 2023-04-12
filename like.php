@@ -4,7 +4,7 @@
 $name = $_GET['v'];
 
 if(!isset($_SESSION['profileuser3']) || !isset($_GET['v'])) {
-    header('Location: ' . $_SERVER['HTTP_REFERER'] . '&err=You must login to post a comment.');
+    header('Location: ' . $_SERVER['HTTP_REFERER'] . '&err=You must login to like a video.');
     die("You are not logged in or you did not put in an argument");
 }
 

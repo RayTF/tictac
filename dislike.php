@@ -1,4 +1,3 @@
-<?php require("config.php"); ?>
 <?php require("static/lib/profile.php"); ?>
 
 <?php
