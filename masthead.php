@@ -36,7 +36,7 @@
                       <li><a class="align-middle dropdown-item" href="#">@<b>'.$row['username'].'</b></a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="upload.php"><svg class="align-middle" width="15" height="15" fill="currentColor"><use xlink:href="icons.svg#upload"/></svg> Upload</a>
-                      <li><a class="align-middle dropdown-item" href="user.php?name='.$row['username'].'"><svg class="align-middle" width="15" height="15" fill="currentColor"><use xlink:href="icons.svg#person-circle"/></svg> Your Channel</a></li>
+                      <li><a class="align-middle dropdown-item" href="@'.$row['username'].'"><svg class="align-middle" width="15" height="15" fill="currentColor"><use xlink:href="icons.svg#person-circle"/></svg> Your Channel</a></li>
                       <li><a class="align-middle dropdown-item" href="account.php"><svg class="align-middle" width="15" height="15" fill="currentColor"><use xlink:href="icons.svg#pencil-square"/></svg> Edit Profile</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="align-middle dropdown-item" href="logout.php"><svg class="align-middle" width="15" height="15" fill="currentColor"><use xlink:href="icons.svg#door-open"/></svg> Logout</a></li>

@@ -44,7 +44,7 @@
 		addView($_GET['v'], @$_SESSION['profileuser3'], $mysqli);
 		$commentplaceholder = "Enter your comment here.";
 		$commentbutton = '<div><input style="width:100%;margin-bottom:10px;" type="submit" name="submit" value="Comment" class="btn btn-primary float-end"></div>';
-		$delbutton = '<div><a style="width:100%;margin-bottom:10px;" href="deletevideo.php?v='.$_GET['v'].'" class="btn btn-danger">Delete</a></div>';
+		$delbutton = '<div><a style="width:100%;margin-bottom:10px;" href="#deleteconfirmation" data-bs-toggle="modal" class="btn btn-danger">Delete</a></div>';
 		} else {
 		$commentplaceholder = "Please sign in to comment.";
 		$commentbutton = '<input type="submit" name="submit" value="Comment" class="btn btn-primary float-end" disabled>';
@@ -125,7 +125,7 @@ echo '<div class="alert alert-success" role="alert">
 									</a>
 								</div>
 								<div class="col-lg-10">
-												<a class="user" href="user.php?name='.$row['author'].'">'.$row['author'].''.$verified.'</a><br>
+												<a class="user" href="@'.$row['author'].'">'.$row['author'].''.$verified.'</a><br>
 																																																																										<small>Uploaded on '.$upload.' &bull; '.$views.' views &bull; '.$rows.' subscribers</small>
 								</div>
 							</div>
@@ -183,7 +183,7 @@ echo '<div class="alert alert-success" role="alert">
 							<div id="comment">
 									<div class="row">
 	<div class="col-lg-1" style="width:5.5%;padding-right:0">
-		<a href="user.php?name='.$row['author'].'">
+		<a href="@'.$row['author'].'">
 			<img class="rounded-circle w-100" src="content/pfp/'.getUserPic($row['author']).'">
 		</a>
 	</div>
@@ -217,13 +217,30 @@ echo '<div class="alert alert-success" role="alert">
 			</div>
 			<div class="col-7">
 				<h5><a href="watch.php?v='.$row['vid'].'">'.$row['videotitle'].'</a></h5>
-																					<p>			<a class="user" href="user.php?name='.$row['author'].'">'.$row['author'].'</a> &bull; '.$views.' views &bull; '.$upload.'</p>
+																					<p>			<a class="user" href="@'.$row['author'].'">'.$row['author'].'</a> &bull; '.$views.' views &bull; '.$upload.'</p>
 			</div>
 		</div>
 	</div>
 </div>';}}?>
 </div></div>
 		</div>
+		<div class="modal fade" id="deleteconfirmation" tabindex="-1" aria-labelledby="delete" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="delete">Delete video?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this video? If you delete it, you <b>will not</b> be able to recover it.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <a href="deletevideo.php?v=<?php echo $_GET['v']; ?>" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
 		<?php include("footer.php"); ?>
 </body>
 </html>

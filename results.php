@@ -60,7 +60,7 @@
 			</div>
 			<div class="col-6">
 				<h3><a href="watch.php?v=<?php echo $value['vid']; ?>"><?php echo $value['videotitle']; ?></a></h3>
-																					<p>			<a class="user" href="user.php?name=<?php echo $value['author']; ?>"><?php echo $value['author']; ?></a> &bull; <?php echo $views; ?> views	&bull;
+																					<p>			<a class="user" href="@<?php echo $value['author']; ?>"><?php echo $value['author']; ?></a> &bull; <?php echo $views; ?> views	&bull;
 				<span class="text-muted"><?php echo $upload; ?></span></p>
 				<p><?php echo $value['description']; ?></p>
 			</div>
