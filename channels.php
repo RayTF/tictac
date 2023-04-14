@@ -29,7 +29,7 @@
 							<use xlink:href="icons.svg#patch-check-fill"/>
 						</svg>';
 						} else {
-							$verifed = "";
+							$verified = "";
 						}
 						if ($row['displayname'] == null) {
                             $display = $row['username'];
