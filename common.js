@@ -33,7 +33,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	});
 	$("#light").click(function(){
 		$("#themeSelection").removeClass("show");
-		$("#bootstrap").attr("href", "assets/bs.css");
+		$("#bootstrap").attr("href", "classic.css");
 		$("#navbar").attr("class", "navbar navbar-light bg-light navbar-static-top navbar-expand-md");
 		Cookies.set("theme", "light", { expires: 1000 });
 	});
@@ -51,7 +51,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	});
 	$("#finalium").click(function(){
 		$("#themeSelection").removeClass("show");
-		$("#bootstrap").attr("href", "assets/bs-finalium.css");
+		$("#bootstrap").attr("href", "sb-finalium.css");
 		$("#navbar").attr("class", "navbar navbar-light bg-light navbar-static-top navbar-expand-md");
 		Cookies.set("theme", "finalium", { expires: 1000 });
 	});

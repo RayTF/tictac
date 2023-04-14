@@ -20,3 +20,8 @@
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#fd9814">
 	<?php error_reporting(~E_ALL & ~E_NOTICE); ?>
+	<?php
+	// valid values: source (sourcebracket branding), quad (Quadium branding)
+	// not implemented
+	$branding="source";
+	?>

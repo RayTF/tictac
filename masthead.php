@@ -1,12 +1,12 @@
 <nav id="navbar" class="navbar  navbar-light bg-light  navbar-static-top navbar-expand-md">
 		<div class="container">
-			<a class="navbar-brand" href="."><img src="logoshort.png" alt="Quadium" height="32" class="d-inline-block align-text-top"></a>
-			<form class="d-flex" method="GET" action="search.php">
+			<a class="navbar-brand" href="."><img src="favicon2.png" alt="Quadium" height="32" class="d-inline-block align-text-top"></a>
+			<form class="d-flex" method="GET" action="results.php">
 			<div class="input-group">
 			        <span class="input-group-text" id="basic-addon1"><svg class="bi" width="16" height="16" fill="currentColor">
 	<use xlink:href="icons.svg#search"/>
 </svg></span>
-				<input name="query" class="form-control" type="search" placeholder="Search" aria-label="Search">
+				<input name="q" class="form-control" type="search" placeholder="Search" aria-label="Search">
 			</div>
 			</form>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
       }
     ?>				
 </div>
-										<!-- <div class="dropdown">
+									<!--	<div class="dropdown">
 						<li class="nav-item">
 							<style>
 								#openSettings.nav-link {
@@ -68,11 +68,7 @@
 						<ul class="dropdown-menu" id="themeSelection" aria-labelledby="navbarDropdown">
 							 <li><a class="dropdown-item" id="back" href="#">Back</a></li>
 							<li><a class="dropdown-item" id="finalium" href="#">Light</a></li>
-							<li><a class="dropdown-item" id="finalium-dark" href="#">Dark</a></li>
-							<li><a class="dropdown-item" id="light" href="#">Classic Light</a></li>
-							<li><a class="dropdown-item" id="dark" href="#">Classic Dark</a></li>
-							<li><a class="dropdown-item" id="vanilla" href="#">Bootstrap</a></li>
-                         <li><a class="dropdown-item" id="un" href="#">Theme picker not added yet</a>
+							<li><a class="dropdown-item" id="light" href="#">Classic</a></li>
 						</ul>
 					</div> -->
 				</ul>

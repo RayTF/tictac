@@ -1,1 +1,5 @@
+RewriteEngine On
+ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
 php_value session.gc_maxlifetime 15770000
+RewriteRule ^(@(.*?))/?$ user.php?name=$2 
