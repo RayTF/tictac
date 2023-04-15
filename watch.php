@@ -44,8 +44,12 @@
 		addView($_GET['v'], @$_SESSION['profileuser3'], $mysqli);
 		$commentplaceholder = "Enter your comment here.";
 		$commentbutton = '<div><input style="width:100%;margin-bottom:10px;" type="submit" name="submit" value="Comment" class="btn btn-primary float-end"></div>';
+		if($_SESSION['profileuser3'] == $row['author']) {
 		$delbutton = '<div><a style="width:100%;margin-bottom:10px;" href="#deleteconfirmation" data-bs-toggle="modal" class="btn btn-danger">Delete</a></div>';
 		} else {
+			$delbutton = '';
+		}
+	} else {
 		$commentplaceholder = "Please sign in to comment.";
 		$commentbutton = '<input type="submit" name="submit" value="Comment" class="btn btn-primary float-end" disabled>';
 		$delbutton = '';
