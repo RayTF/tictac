@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Home - Quadium</title>
+	<title>Home - ticTac</title>
 </head>
 <style>
 	.bi {
@@ -36,7 +36,7 @@ echo '<div class="alert alert-success" role="alert">
 	<div class="col-xl-8">
 				<div class="row">
 			<div class="col-8">
-			<h3>Recently uploaded to Quadium</h3>
+			<h3>Recently uploaded to ticTac</h3>
 			</div><div class="col-4">
 			<div class="text-end"><a href="browse.php" class="btn btn-light btn-sm">Browse videos</a></div>
 			</div>
@@ -72,11 +72,11 @@ echo '<div class="alert alert-success" role="alert">
 </div>';}}?>
 			</div>
 	<div class="col-xl-4">
-					<h3>Welcome to Quadium</h3>
+					<h3>Welcome to ticTac</h3>
 			<p>I can't believe it's not squareBracket</p>
 				<hr/>
 		<h3>News and updates</h3>
-		<p>Quadium is pretty much finished now. It's now a finished version of the prototype named "RockTube" from February 2022.</p>
+		<p>ticTac is pretty much finished now. It's now a finished version of the prototype named "byteHax" from February 2022.</p>
 		<p class="blockquote-footer">crazyassfella</p>
 		<figure>
 		  <blockquote class="blockquote">
