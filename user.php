@@ -137,7 +137,7 @@
 			</div>
 			<div class="col-6">
 				<h3><a href="watch.php?v='.$row['vid'].'">'.$row['videotitle'].'</a></h3>
-																					<p>			<a class="user" href="user.php?name='.$row['author'].'">'.$row['author'].'</a> &bull; '.$row['views'].' views	&bull;
+																					<p>			<a class="user" href="user.php?name='.$row['author'].'">'.$row['author'].'</a> &bull; '.$views.' views	&bull;
 				<span class="text-muted">'.$upload.'</span></p>
 				<p>'.$row['description'].'</p>
 			</div>
