@@ -1,6 +1,6 @@
 <nav id="navbar" class="navbar  navbar-light bg-light  navbar-static-top navbar-expand-md">
 		<div class="container">
-			<a class="navbar-brand" href="."><img src="favicon2.png" alt="Quadium" height="32" class="d-inline-block align-text-top"></a>
+			<a class="navbar-brand" href="."><img src="logo2.png" alt="ticTac" height="32" class="d-inline-block align-text-top"></a>
 			<form class="d-flex" method="GET" action="results.php">
 			<div class="input-group">
 			        <span class="input-group-text" id="basic-addon1"><svg class="bi" width="16" height="16" fill="currentColor">
@@ -18,7 +18,7 @@
 										<div class="d-grid gap-2 d-md-block">
                                         <?php
       if(!$loggedIn) {
-        echo '<a href="login.php" class="btn btn-warning me-md-1">Login</a>
+        echo '<a href="login.php" class="btn btn-primary me-md-1">Login</a>
         <a href="register.php" class="btn btn-secondary">Register</a>';
       } else {
         $statement = $mysqli->prepare("SELECT * FROM users WHERE username = ? LIMIT 1");
