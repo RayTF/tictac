@@ -89,7 +89,7 @@
 				<li class="nav-item"><a href="channels.php" class="nav-link link-light px-2"><svg class="bi" width="16" height="16" fill="currentColor">
 	<use xlink:href="icons.svg#people"/>
 </svg> Channels</a></li>
-									<li class="nav-item"><a href="https://discord.gg/quadium" class="nav-link link-light px-2"><svg class="bi" width="16" height="16" fill="currentColor">
+									<li class="nav-item"><a href="https://discord.gg/crapblox" class="nav-link link-light px-2"><svg class="bi" width="16" height="16" fill="currentColor">
 	<use xlink:href="icons.svg#discord"/>
 </svg> Discord</a></li>
 							</ul>
