@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>403 Forbidden - Quadium</title>
+	<title>403 Forbidden - clipIt</title>
 </head>
 <style>
 	.bi {

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Home - Quadium</title>
+	<title>Home - clipIt</title>
 </head>
 <style>
 	.bi {

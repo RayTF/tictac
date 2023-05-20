@@ -9,9 +9,9 @@
             $result = $statement->get_result();
             while($row = $result->fetch_assoc()) {
                 if ($row['banned'] == '1') {
-                    header("Location: index.php?err=This account has been suspended by Quadium staff<br/>Reason: ".$row['banreason']);
+                    header("Location: index.php?err=This account has been suspended by clipIt staff<br/>Reason: ".$row['banreason']);
               }else{
-                echo "<title>".$row['username']." - Quadium</title>";
+                echo "<title>".$row['username']." - clipIt</title>";
               }
             }
             $statement->close();
@@ -89,7 +89,7 @@
                             if(isset($_SESSION['profileuser3'])) {
                                 if(ifSubscribed($_SESSION['profileuser3'], $_GET['name'], $mysqli) == false) {
                                echo '<div class="col-md-2">
-                               <a href="subscribe.php?name='.$_GET['name'].'" id="subscribe" class="btn btn-warning" type="button">Subscribe <span class="badge bg-dark text-bg-secondary">'.$rows.'</span></a>
+                               <a href="subscribe.php?name='.$_GET['name'].'" id="subscribe" class="btn btn-danger" type="button">Subscribe <span class="badge bg-dark text-bg-secondary">'.$rows.'</span></a>
                            </div>';
                                } else { 
                                 echo '<div class="col-md-2">
@@ -98,7 +98,7 @@
                                  } 
                                 } else {
                                     echo '<div class="col-md-2">
-                                    <a id="subscribe" class="btn btn-warning" type="button" disabled>Subscribe <span class="badge bg-dark text-bg-secondary">'.$rows.'</span></a>
+                                    <a id="subscribe" class="btn btn-danger" type="button" disabled>Subscribe <span class="badge bg-dark text-bg-secondary">'.$rows.'</span></a>
                                 </div>';
                                 }
                             }
@@ -117,12 +117,14 @@
 				<div class="caption">
                     <?php
 					echo '<h3>Uploaded by '.$display.'</h3>';
-                    $statement = $mysqli->prepare("SELECT * FROM `videos` WHERE `author` = ?");
+                    $statement = $mysqli->prepare("SELECT * FROM `videos` WHERE `author` = ? AND `privacy` = 'public'");
                     $statement->bind_param("s", $_GET['name']);
                     $statement->execute();
                     $result = $statement->get_result();
+                    if($result->num_rows == 0) echo ''.$_GET['name'].' has not uploaded anything.';
                     if($result->num_rows !== 0){
                     while($row = $result->fetch_assoc()) {
+                        
                         $upload = time_elapsed_string($row['date']);
                         $views = getViews($row['vid'], $mysqli); 
                         echo '<div class="card" style="margin-bottom:10px">

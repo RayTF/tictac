@@ -9,18 +9,18 @@
             $result = $statement->get_result();
             while($row = $result->fetch_assoc()) {
                 echo '
-		<meta name="title" content="'.$row['videotitle'].' - Quadium">
+		<meta name="title" content="'.$row['videotitle'].' - clipIt">
 	<meta name="description" content="'.$row['description'].'">
-	<meta property="og:site_name" content="Quadium"/>
-	<meta property="og:title" content="'.$row['videotitle'].' - Quadium">
+	<meta property="og:site_name" content="clipIt"/>
+	<meta property="og:title" content="'.$row['videotitle'].' - clipIt">
 	<meta property="og:description" content="'.$row['description'].'">
 	<meta property="og:image" content="content/thumb/'.$row['vid'].'.jpg">
 	<meta property="og:url" content="watch.php?v='.$row['videotitle'].'">
-	<meta property="twitter:title" content="'.$row['videotitle'].' - Quadium">
+	<meta property="twitter:title" content="'.$row['videotitle'].' - clipIt">
 	<meta property="twitter:description" content="'.$row['description'].'">
 	<meta property="twitter:image" content="content/thumb/'.$row['vid'].'.jpg">
 	<meta name="twitter:card" content="summary_large_image">
-	<title>'.$row['videotitle'].' - Quadium</title>';
+	<title>'.$row['videotitle'].' - clipIt</title>';
     $who = $row['author'];
     $rows = getSubscribers($row['author'], $mysqli);
     $idk = strtotime($row['date']);
@@ -97,6 +97,10 @@ echo '<div class="alert alert-success" role="alert">
 '.$suc.'
 </div>'; 
 }
+echo '
+<div class="alert alert-primary" role="alert">
+<a class="alert-link" href="watchv2.php?v='.$_GET['v'].'">Try our new watch page!</a>
+</div>';
     echo('
 		<div id="container" style="height: 30rem;">
         <video id="c" controls crossorigin playsinline poster="content/thumb/'.$row['vid'].'.jpg">
@@ -200,7 +204,7 @@ echo '<div class="alert alert-success" role="alert">
 </div></div></div></div>
 	<div class="col-lg-3">
 	<?php
-		$statement = $mysqli->prepare("SELECT * FROM videos ORDER BY RAND() LIMIT 6");
+		$statement = $mysqli->prepare("SELECT * FROM videos WHERE `privacy` = 'public' ORDER BY RAND() LIMIT 6");
                 //$statement->bind_param("s", $_POST['fr']); i have no idea what this is but we don't need it
                 $statement->execute();
                 $result = $statement->get_result();

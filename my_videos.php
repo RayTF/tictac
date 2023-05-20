@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Video Manager - Quadium</title>
+	<title>Video Manager - clipIt</title>
 </head>
 <style>
 	.bi {
@@ -50,7 +50,7 @@ echo '<div class="alert alert-success" role="alert">
                     while($row = $result->fetch_assoc()) {
 						$upload = time_elapsed_string($row['date']);
 						$views = getViews($row['vid'], $mysqli); 
-                        $delbutton = '<div><a style="width:100%;margin-bottom:10px;" href="deletevideo.php?v='.$row['vid'].'" class="btn btn-danger">Delete</a></div>';
+                        $delbutton = '<a style="width:100%;margin-bottom:10px;" href="deletevideo.php?v='.$row['vid'].'" class="btn btn-danger">Delete</a>';
                         echo '
 					<div class="card" style="margin-bottom:10px">
 	<div class="card-body">
@@ -66,8 +66,11 @@ echo '<div class="alert alert-success" role="alert">
 				<h3><a href="watch.php?v='.$row['vid'].'">'.$row['videotitle'].'</a></h3>
 																					<p>			<a class="user" href="@'.$row['author'].'">'.$row['author'].'</a> &bull; '.$views.' views	&bull;
 				<span class="text-muted">'.$upload.'</span></p>
-				<p>'.$row['description'].'</p>
+				<!--<p>'.$row['description'].'</p>-->
+				<div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
                 '.$delbutton.'
+				<a style="width:100%;margin-bottom:10px;" href="editvideo.php?v='.$row['vid'].'" class="btn btn-primary">Edit</a>
+				</div>
 			</div>
 		</div>
 	</div>

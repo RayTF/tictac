@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>404 Not Found - Quadium</title>
+	<title>Videos - clipIt</title>
 </head>
 <style>
 	.bi {

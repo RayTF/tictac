@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Login - ticTac</title>
+	<title>Login - clipIt</title>
     <style>
     html,
 body {
@@ -105,7 +105,7 @@ body {
             ?>
   <form method="POST" action="">
     <img class="mb-4" src="logoshort.png" alt="" width="97" height="57">
-    <h1 class="h3 mb-3 fw-normal">Register to access Quadium</h1>
+    <h1 class="h3 mb-3 fw-normal">Register to access all of clipIt</h1>
 
     <div class="form-floating">
       <input type="text" name="name" class="form-control" id="name" placeholder="Username">
@@ -125,7 +125,7 @@ body {
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div> -->
-    <button class="w-100 btn btn-lg btn-warning" type="submit">Sign in</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2022-<?php echo date("Y"); ?> cosmixcode</p>
   </form>
 </main>

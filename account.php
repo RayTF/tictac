@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Edit Profile - Quadium</title>
+	<title>Edit Profile - clipIt</title>
 </head>
 <style>
 	.bi {
@@ -145,7 +145,7 @@
                         $rare = '';
                     }
                     if ($row['is_admin'] == 1) {
-                        $admin = '<svg data-bs-toggle="tooltip" data-bs-placement="top" title="This user is a Quadium admin." style="margin-left: 0.75%;" class="bi" width="32" height="32" fill="currentColor">
+                        $admin = '<svg data-bs-toggle="tooltip" data-bs-placement="top" title="This user is a clipIt admin." style="margin-left: 0.75%;" class="bi" width="32" height="32" fill="currentColor">
                         <use xlink:href="icons.svg#person-badge"/>
                     </svg>';
                     } else {
