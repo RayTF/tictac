@@ -104,7 +104,7 @@ body {
             }
             ?>
   <form method="POST" action="">
-    <img class="mb-4" src="logoshort.png" alt="" width="97" height="57">
+    <img class="mb-4" src="logoci.png" alt="" width="97" height="57">
     <h1 class="h3 mb-3 fw-normal">Register to access all of clipIt</h1>
 
     <div class="form-floating">
