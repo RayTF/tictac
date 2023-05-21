@@ -46,6 +46,11 @@
         $statement->execute();
         $result = $statement->get_result();
         while($row = $result->fetch_assoc()) {
+          if($row['displayname'] !== null) {
+          $displayname = $row['displayname'];
+          } else {
+            $displayname = $who;
+          }
         if ($row['is_verified'] == 1) {
             $verified = '<svg data-bs-toggle="tooltip" data-bs-placement="top" title="This user is verified." style="margin-left: 0.75%;" class="bi" width="16" height="16" fill="currentColor">
             <use xlink:href="icons.svg#patch-check-fill"/>
@@ -136,7 +141,7 @@ echo '<div class="alert alert-success" role="alert">
          <a class="text-decoration-none text-reset me-2" href="/@'.$row['author'].'">
          <div class="d-inline-block d-flex flex-row my-auto">
           <img class="rounded-circle me-2" src="/content/pfp/'.getUserPic($row['author']).'" alt="'.$row['author'].'" width="54" height="54">
-          <div class="align-self-center"><span class="h6 text-body">'.$verified.' '.$row['author'].'</span>
+          <div class="align-self-center"><span class="h6 text-body">'.$verified.' '.$displayname.'</span>
           <p class="text-muted h6 h5-sm mt-2 subcount" id="subcount">'.$rows.' subscribers</p></div>
           </div>
          </a>

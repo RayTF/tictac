@@ -1,4 +1,9 @@
 <?php
+// ==============
+// ===BRANDING===
+// ==============
+$sitename = "squareBracket";
+$logosrc = "sb.png";
     // connects to your database
     $mysqli = new mysqli("127.0.0.1", "root", "", "retrotube");
     // starts session
