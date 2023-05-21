@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Upload - Quadium</title>
+	<title>Upload - <?php echo $sitename;?></title>
 </head>
 <style>
 	.bi {

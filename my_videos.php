@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Video Manager - clipIt</title>
+	<title>Video Manager - <?php echo $sitename;?></title>
 </head>
 <style>
 	.bi {

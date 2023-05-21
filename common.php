@@ -42,6 +42,9 @@
 	  .bi {
 		fill: currentColor;
 	  }
+	  * {
+		--bs-gutter-x: 1rem;
+	  }
 	  </style>
 	<script>
 		subscribe_string = 'Subscribe';

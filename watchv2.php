@@ -25,18 +25,18 @@
                 $unlisted = "";
               }  
               echo '
-		<meta name="title" content="'.$row['videotitle'].' - clipIt">
+		<meta name="title" content="'.$row['videotitle'].' - '.$sitename.'">
 	<meta name="description" content="'.$row['description'].'">
-	<meta property="og:site_name" content="clipIt"/>
-	<meta property="og:title" content="'.$row['videotitle'].' - clipIt">
+	<meta property="og:site_name" content="'.$sitename.'"/>
+	<meta property="og:title" content="'.$row['videotitle'].' - '.$sitename.'">
 	<meta property="og:description" content="'.$row['description'].'">
 	<meta property="og:image" content="content/thumb/'.$row['vid'].'.jpg">
 	<meta property="og:url" content="watch.php?v='.$row['videotitle'].'">
-	<meta property="twitter:title" content="'.$row['videotitle'].' - clipIt">
+	<meta property="twitter:title" content="'.$row['videotitle'].' - '.$sitename.'">
 	<meta property="twitter:description" content="'.$row['description'].'">
 	<meta property="twitter:image" content="content/thumb/'.$row['vid'].'.jpg">
 	<meta name="twitter:card" content="summary_large_image">
-	<title>'.$row['videotitle'].' - clipIt</title>';
+	<title>'.$row['videotitle'].' - '.$sitename.'</title>';
     $who = $row['author'];
     $rows = getSubscribers($row['author'], $mysqli);
     $idk = strtotime($row['date']);

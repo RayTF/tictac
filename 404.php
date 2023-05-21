@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>404 Not Found - clipIt</title>
+	<title>404 Not Found - <?php echo $sitename;?></title>
 </head>
 <style>
 	.bi {

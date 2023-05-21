@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Edit Profile - clipIt</title>
+	<title>Edit Profile - <?php echo $sitename;?></title>
 </head>
 <style>
 	.bi {

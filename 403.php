@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>403 Forbidden - clipIt</title>
+	<title>403 Forbidden - <?php echo $sitename;?></title>
 </head>
 <style>
 	.bi {

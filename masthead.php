@@ -15,7 +15,7 @@
     </svg>
 <nav id="navbar" class="navbar  navbar-light bg-light  navbar-static-top navbar-expand-md">
 		<div class="container">
-			<a class="navbar-brand" href="."><img src="logoci.png" alt="ticTac" height="32" class="d-inline-block align-text-top"></a>
+			<a class="navbar-brand" href="."><img src="<?php echo $logosrc;?>" alt="<?php echo $sitename;?>" height="32" class="d-inline-block align-text-top"></a>
 			<form class="d-flex" method="GET" action="results.php">
 			<div class="input-group">
 			        <span class="input-group-text" id="basic-addon1"><svg class="bi" width="16" height="16" fill="currentColor">

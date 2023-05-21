@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Videos - clipIt</title>
+	<title>Videos - <?php echo $sitename;?></title>
 </head>
 <style>
 	.bi {

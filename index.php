@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Home - clipit</title>
+	<title>Home - <?php echo $sitename;?></title>
 </head>
 <style>
 	.bi {
@@ -36,7 +36,7 @@ echo '<div class="alert alert-success" role="alert">
 	<div class="col-xl-8">
 				<div class="row">
 			<div class="col-8">
-			<h3>Recently uploaded to clipIt</h3>
+			<h3>Recently uploaded to <?php echo $sitename;?></h3>
 			</div><div class="col-4">
 			<div class="text-end"><a href="browse.php" class="btn btn-light btn-sm">Browse videos</a></div>
 			</div>
@@ -72,7 +72,7 @@ echo '<div class="alert alert-success" role="alert">
 </div>';}}?>
 			</div>
 	<div class="col-xl-4">
-					<h3>Welcome to clipIt</h3>
+					<h3>Welcome to <?php echo $sitename;?></h3>
 			<p>I can't believe it's not squareBracket</p>
 				<hr/>
 		<h3>News and updates</h3>

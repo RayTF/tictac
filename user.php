@@ -9,9 +9,9 @@
             $result = $statement->get_result();
             while($row = $result->fetch_assoc()) {
                 if ($row['banned'] == '1') {
-                    header("Location: index.php?err=This account has been suspended by clipIt staff<br/>Reason: ".$row['banreason']);
+                    header("Location: index.php?err=This account has been suspended by '.$sitename.' staff<br/>Reason: ".$row['banreason']);
               }else{
-                echo "<title>".$row['username']." - clipIt</title>";
+                echo "<title>".$row['username']." - '.$sitename.'</title>";
               }
             }
             $statement->close();
@@ -121,7 +121,7 @@
                     $statement->bind_param("s", $_GET['name']);
                     $statement->execute();
                     $result = $statement->get_result();
-                    if($result->num_rows == 0) echo ''.$_GET['name'].' has not uploaded anything.';
+                    if($result->num_rows == 0) echo ''.$display.' has not uploaded anything.';
                     if($result->num_rows !== 0){
                     while($row = $result->fetch_assoc()) {
                         

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Search for "<?php echo $_GET['q'];?>" - Quadium</title>
+	<title>Search for "<?php echo $_GET['q'];?>" - <?php echo $sitename;?></title>
 </head>
 <style>
 	.bi {

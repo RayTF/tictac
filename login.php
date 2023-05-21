@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include("common.php"); ?>
-	<title>Login - clipIt</title>
+	<title>Login - <?php echo $sitename;?></title>
     <style>
     html,
 body {
@@ -80,8 +80,8 @@ body {
                                 }
                             ?>
   <form method="POST" action="">
-    <img class="mb-4" src="logoci.png" alt="" height="57">
-    <h1 class="h3 mb-3 fw-normal">Login to access all of clipIt</h1>
+    <img class="mb-4" src="<?php echo $logosrc;?>" alt="" height="57">
+    <h1 class="h3 mb-3 fw-normal">Login to access all of <?php echo $sitename;?></h1>
 
     <div class="form-floating">
       <input type="text" name="name" class="form-control" id="name" placeholder="Username">
