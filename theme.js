@@ -3,7 +3,7 @@
  * Copyright 2011-2023 The Bootstrap Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  */
-
+/*
 (() => {
     'use strict'
   
@@ -74,5 +74,4 @@
           })
         })
     })
-  })()
-  
+  })()*/
