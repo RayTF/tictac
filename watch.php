@@ -223,6 +223,7 @@ echo'
                     while($row = $result->fetch_assoc()) {
 						$upload = time_elapsed_string($row['date']);
 						$views = getViews($row['vid'], $mysqli); 
+			    $auth = $row['author'];
                         echo '
                <div class="card shadow-sm mt-2 mt-sm-2 mt-xl-0 mb-2" style="cursor: pointer;" onclick="location.href = \'watch.php?v='.$row['vid'].'\'">
           <div class="row g-0">                                                                                                                                                                                                                                                                                                                                                                                                    
