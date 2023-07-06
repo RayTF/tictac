@@ -224,7 +224,7 @@ echo'
 						$upload = time_elapsed_string($row['date']);
 						$views = getViews($row['vid'], $mysqli); 
                         echo '
-               <div class="card shadow-sm mt-2 mt-sm-2 mt-xl-0 mb-2" style="cursor: pointer;" onclick="location.href = \'watchv2.php?v='.$row['vid'].'\'">
+               <div class="card shadow-sm mt-2 mt-sm-2 mt-xl-0 mb-2" style="cursor: pointer;" onclick="location.href = \'watch.php?v='.$row['vid'].'\'">
           <div class="row g-0">                                                                                                                                                                                                                                                                                                                                                                                                    
             <div class="col-12 col-lg-6 position-relative d-inline-block">
               <div class="ratio ratio-16x9">
