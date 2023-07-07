@@ -136,7 +136,7 @@
             <form action="" method="POST" enctype="multipart/form-data">
   <div class="form-floating mb-3">
     <input type="text" class="form-control" name="videotitle" id="videotitle" aria-describedby="emailHelp">
-    <label for="videotitle" class="form-label">Video title (up to 30 characters)</label>  
+    <label for="videotitle" class="form-label">Video title (up to 40 characters)</label>  
 </div>
   <div class="form-floating mb-3">
     <textarea class="form-control" class="form-control" name="bio" id="bio" style="height: 200px"></textarea>
