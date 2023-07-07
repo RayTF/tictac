@@ -104,14 +104,14 @@
 				<li class="nav-item"><a href="channels.php" class="nav-link link-light px-2"><svg class="bi" width="16" height="16" fill="currentColor">
 	<use xlink:href="icons.svg#people"/>
 </svg> Channels</a></li>
-									<li class="nav-item"><a href="https://discord.gg/crapblox" class="nav-link link-light px-2"><svg class="bi" width="16" height="16" fill="currentColor">
+									<li class="nav-item"><a href="https://discord.gg/zwsM2MSATd" class="nav-link link-light px-2"><svg class="bi" width="16" height="16" fill="currentColor">
 	<use xlink:href="icons.svg#discord"/>
 </svg> Discord</a></li>
 							</ul>
 		</div>
 	</nav>
     </div>
-	<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+<!-- 	<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (dark)">
         <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
         <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
@@ -139,4 +139,4 @@
           </button>
         </li>
       </ul>
-    </div>
+    </div> -->
