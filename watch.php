@@ -190,7 +190,7 @@ echo '<div class="alert alert-success" role="alert">
         $stmt->bind_param("s", $_GET['v']);
         $stmt->execute();
         $result = $stmt->get_result();
-        if($result->num_rows === 0) echo('No comments.');
+        if($result->num_rows === 0) echo '<p>No comments.</p>';
   echo '<div class="offcanvas-body me-3 me-lg-2">
    <form method="post" action="comment.php?v='.$_GET['v'].'" class="form-floating mb-2">
     <textarea name="bio" class="form-control" placeholder="'.$commentplaceholder.'" id="comment-text" style="height: 80px"></textarea>
