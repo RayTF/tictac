@@ -13,24 +13,40 @@
 	<?php include("masthead.php"); ?>
 		<div class="container">
         <div class="row">
+<?php include("studiosidenav.php"); ?>
 	<div class="col-xl-8">
 				<div class="row">
 			<div class="col-8">
 			<h3>Edit your channel</h3>
 			</div><div class="col-4">
 			</div>
+			<?php
+			if(isset($_SESSION['profileuser3'])){
+				$rows = getSubscribers($_SESSION['profileuser3'], $mysqli);
+			    $statement = $mysqli->prepare("SELECT * FROM users WHERE username = ? LIMIT 1");
+			    $statement->bind_param("s", $_SESSION['profileuser3']);
+			    $statement->execute();
+			    $result = $statement->get_result();
+			    if($result->num_rows === 0) exit('No rows');
+			    while($row = $result->fetch_assoc()) {
+					$displayname = $row['displayname'];
+					$bg = $row['channel_background'];
+					$desc = $row['description'];
+				}
+			}
+				?>
             <form action="" method="POST" enctype="multipart/form-data">
   <div class="form-floating mb-3">
     <input type="text" class="form-control" name="displayname" id="displayname" aria-describedby="emailHelp">
-    <label for="displayname" class="form-label">Display name</label>  
+    <label for="displayname" placeholder="<?php echo $displayname;?>" class="form-label">Display name</label>  
 </div>
 <div class="form-floating mb-3">
     <input type="text" class="form-control" name="bg" id="bg">
-    <label for="bg" class="form-label">Channel background (must be external URL)</label>  
+    <label for="bg" placeholder="<?php echo $bg;?>" class="form-label">Channel background (must be external URL)</label>  
 </div>
   <div class="form-floating mb-3">
     <textarea class="form-control" class="form-control" name="description" id="description" style="height: 200px"></textarea>
-    <label for="description" class="form-label">Description</label>
+    <label for="description" placeholder="<?php echo $desc;?>" class="form-label">Description</label>
   </div>
   <div class="mb-3">
     <label for="new_pic" class="form-label">Select a profile picture (PNG/GIF/JPG)</label>
@@ -99,7 +115,7 @@
 		</div>
 
 			</div>
-	<div class="col-xl-4">
+	<!-- <div class="col-xl-4">
 					<h3>Profile Preview</h3>
                     <style>
 	.bg-custom-profile {
@@ -145,7 +161,7 @@
                         $rare = '';
                     }
                     if ($row['is_admin'] == 1) {
-                        $admin = '<svg data-bs-toggle="tooltip" data-bs-placement="top" title="This user is a clipIt admin." style="margin-left: 0.75%;" class="bi" width="32" height="32" fill="currentColor">
+                        $admin = '<svg data-bs-toggle="tooltip" data-bs-placement="top" title="This user is a Quadium admin." style="margin-left: 0.75%;" class="bi" width="32" height="32" fill="currentColor">
                         <use xlink:href="icons.svg#person-badge"/>
                     </svg>';
                     } else {
@@ -168,7 +184,7 @@
 		</div>
 	</div>
 </div>';}}?>
-			</div>
+			</div> -->
 </div>
 		</div>
 		<?php include("footer.php");?>

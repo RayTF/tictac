@@ -16,7 +16,7 @@
         <div class="card-body">
 		<div class="row">
 <h1><span class="text-muted">404</span> Not Found</h1>
-<p class="lead">The page you requested does not exist or may have been moved.</p>
+<p class="lead">The page you requested does not exist. It may have been deleted or moved.</p>
 <a href="." class="col-3 btn btn-primary" style="margin-left: 13px;">Go Home</a>
 </div></div</div>
 			</div>

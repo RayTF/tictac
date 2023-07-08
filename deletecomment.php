@@ -12,10 +12,9 @@ if($row['author'] == $_SESSION['profileuser3']) {
     $stmt2 = $mysqli->prepare("DELETE FROM comments WHERE id = ?");
     $stmt2->bind_param("s", $_GET['v']);
     $stmt2->execute();
-    unlink('content/video/'.$_GET['v'].'.mp4');
     header('Location: index.php?success=Comment "'.$vtitle.'" deleted.');
 } else {
-    header('Location: index.php?err=This is not your video!');
+    header('Location: index.php?err=This is not your comment!');
 }
 }
 ?>

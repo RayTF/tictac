@@ -200,6 +200,9 @@ echo '<div class="alert alert-success" role="alert">
    <div id="comments">';        
 while($row = $result->fetch_assoc()) {
     $cd = time_elapsed_string($row['date']);
+    if ($_SESSION['profileuser3'] == $row['author']) {
+      $delcm = "<a style='font-size:14px;color:red;float:right;margin-bottom:-55px;text-decoration:none;' href='deletecomment.php?v=".$row["id"]."'><i class='bi bi-trash3-fill'></i></a>";
+    }
 echo'
           	<div class="card shadow-sm mb-3" id="comment-'.$row['id'].'">
 		<div class="card-body">
@@ -209,6 +212,7 @@ echo'
 		<span class="my-auto">'.$row['author'].'</span><i class="bi bi-dot"></i>'.$cd.'</a>
 		<span class="text-break">
         '.$row['comment'].'
+        '.$delcm.'
 		</span>
 		</div></div></div>
 ';}echo'</div></div></div></div>';?>

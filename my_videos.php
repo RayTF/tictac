@@ -33,6 +33,7 @@ echo '<div class="alert alert-success" role="alert">
  </div>'; 
 } ?>
 		<div class="row">
+		<?php include("studiosidenav_vid.php"); ?>
 	<div class="col-xl-8">
 				<div class="row">
 			<div class="col-8">

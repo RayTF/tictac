@@ -13,7 +13,7 @@
 	<?php include("masthead.php"); ?>
 		<div class="container">
         <?php 
-    error_reporting(~E_ALL & ~E_NOTICE);
+    //error_reporting(~E_ALL & ~E_NOTICE);
          if(isset($_GET['err'])) {
             $err = $_GET['err'];
    echo '<div class="alert alert-danger" role="alert">
@@ -35,6 +35,49 @@ echo '<div class="alert alert-success" role="alert">
 		<div class="row">
 	<div class="col-xl-8">
 				<div class="row">
+				<div class="col-8">
+					<!--<h4>From my subscriptions</h4>
+					<div class="row">
+					<?php
+					/*$stat = $mysqli->prepare("SELECT receiver FROM subscribers WHERE sender = ?");
+					 $stat->bind_param("s", $_SESSION['profileuser3']);
+					 $stat->execute();
+					// $query = "SELECT reciever FROM subscriptions WHERE sender = ?";
+                    $res = $stat->get_result();
+					$resul = mysqli_fetch_array($res);
+					// print_r($resul);
+					$query = implode(', ', $resul);
+					print_r($query);
+		$statement = $mysqli->prepare("SELECT * FROM videos v JOIN users u ON v.author = u.username WHERE v.author IN(".$query.") ORDER BY v.vid DESC LIMIT 20");
+        // What in gods name is he doing       
+		$statement->execute();
+                $result = $statement->get_result();
+                if($result->num_rows !== 0){
+                    while($row = $result->fetch_assoc()) {
+						$upload = time_elapsed_string($row['date']);
+						$views = getViews($row['vid'], $mysqli); 
+                        echo '
+						<div class="col-5">
+					<div class="card" style="margin-bottom:10px">
+	<div class="card-body text-center">
+		<div class="row"><a href="watch.php?v='.$row['vid'].'">
+				<div class="col-lg-12" style="margin-bottom:15px">
+					<div class="img-thumbnail">
+						<img class="img-fluid" src="content/thumb/'.$row['thumb'].'">
+					</div>
+				</div>
+			</a>
+			<div class="col-lg-12">
+				<h4><a href="watch.php?v='.$row['vid'].'">'.$row['videotitle'].'</a></h4>
+																					<p>			<a class="user" href="@'.$row['author'].'">'.$row['author'].'</a> &bull; '.$views.' views &bull;
+				'.$upload.'</p>
+			</div>
+		</div>
+	</div>
+</div></div>';}} else {
+	echo "<p>There is nothing new from your subscriptions.</p>";
+}*/?>
+</div>--></div>
 			<div class="col-8">
 			<h3>Recently uploaded to <?php echo $sitename;?></h3>
 			</div><div class="col-4">

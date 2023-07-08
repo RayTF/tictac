@@ -144,7 +144,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	});
 	$("#dislike").click(function(){
 		if($("#dislike").attr("class") != "text-danger") {
-			$.post("rate.php",
+			$.post("dislike.php",
 			{
 				rating: 0,
 				vidid: video_id
