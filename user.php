@@ -9,9 +9,9 @@
             $result = $statement->get_result();
             while($row = $result->fetch_assoc()) {
                 if ($row['banned'] == '1') {
-                    header("Location: index.php?err=This account has been suspended by '.$sitename.' staff<br/>Reason: ".$row['banreason']);
+                    header("Location: index.php?err=This account has been suspended by $sitename's moderators.<!--<br/>-->Reason: ".$row['banreason']);
               }else{
-                echo "<title>".$row['username']." - '.$sitename.'</title>";
+                echo "<title>".$row['username']." - $sitename</title>";
               }
             }
             $statement->close();
