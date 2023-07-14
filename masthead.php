@@ -16,7 +16,11 @@
 <nav id="navbar" class="navbar  navbar-light bg-light  navbar-static-top navbar-expand-md">
 		<div class="container">
 			<a class="navbar-brand" href="."><img src="<?php echo $logosrc;?>" alt="<?php echo $sitename;?>" height="32" class="d-inline-block align-text-top"></a>
-			<form class="d-flex" method="GET" action="results.php">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div id="navbarCollapse" class="collapse navbar-collapse">
+      <form class="d-flex" method="GET" action="results.php">
 			<div class="input-group">
 			        <span class="input-group-text" id="basic-addon1"><svg class="bi" width="16" height="16" fill="currentColor">
 	<use xlink:href="icons.svg#search"/>
@@ -24,10 +28,6 @@
 				<input name="q" class="form-control" type="search" placeholder="Search" aria-label="Search">
 			</div>
 			</form>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div id="navbarCollapse" class="collapse navbar-collapse">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 				<ul class="navbar-nav dropdown-center">
 										<div class="d-grid gap-2 d-md-block">
@@ -104,9 +104,9 @@
 				<li class="nav-item"><a href="channels.php" class="nav-link link-light px-2"><svg class="bi" width="16" height="16" fill="currentColor">
 	<use xlink:href="icons.svg#people"/>
 </svg> Channels</a></li>
-									<li class="nav-item"><a href="https://discord.gg/zwsM2MSATd" class="nav-link link-light px-2"><svg class="bi" width="16" height="16" fill="currentColor">
+									<!-- <li class="nav-item"><a href="https://discord.gg/zwsM2MSATd" class="nav-link link-light px-2"><svg class="bi" width="16" height="16" fill="currentColor">
 	<use xlink:href="icons.svg#discord"/>
-</svg> Discord</a></li>
+</svg> Discord</a></li> -->
 							</ul>
 		</div>
 	</nav>

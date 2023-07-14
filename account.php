@@ -61,6 +61,7 @@
 							"image/jpeg",
 							"image/png",
 							"image/gif",
+							"image/webp",
 						];
 					    $uid = 0;
 					    try{
@@ -77,7 +78,7 @@
 						    }
 						    else{
 						    	if(!$supported){
-						    		echo "Image not supported (jpg, png or gif)";
+						    		echo "Image not supported (jpg, png, webp or gif)";
 						    	}
 						    	else{
 							    	echo "Image is too large";

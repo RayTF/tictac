@@ -3,11 +3,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="./static/stylesheet.css">
 		<!-- <link rel="stylesheet" id="bootstrap" href="sb-finalium.css" type="text/css"> -->
 		<style>
 			 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 			 * {
 				font-family: "Inter";
+			 }
+			 .vidionlogo {
+				font-family: "Nintendo U";
 			 }
 			 </style>
 		<!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="" crossorigin="anonymous"></script>

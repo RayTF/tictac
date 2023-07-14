@@ -115,6 +115,7 @@ echo '<div class="alert alert-success" role="alert">
 </div>';}}?>
 			</div>
 	<div class="col-xl-4">
+		<hr>
 					<h3>Welcome to <?php echo $sitename;?></h3>
 			<p>I can't believe it's not squareBracket</p>
 				<hr/>
