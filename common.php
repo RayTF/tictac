@@ -13,6 +13,11 @@
 			 .vidionlogo {
 				font-family: "Nintendo U";
 			 }
+			 .descr {
+				margin-left: 17px;
+                margin-bottom: -2px;
+				margin-top: -2px;
+			 }
 			 </style>
 		<!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>

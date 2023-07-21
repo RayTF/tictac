@@ -115,21 +115,20 @@ echo '<div class="alert alert-success" role="alert">
 </div>';}}?>
 			</div>
 	<div class="col-xl-4">
-		<hr>
 					<h3>Welcome to <?php echo $sitename;?></h3>
-			<p>I can't believe it's not squareBracket</p>
+			<p>The best video sharing site of all time....</p>
 				<hr/>
 		<h3>News and updates</h3>
-		<p>You can now edit video details (title, description, privacy setting). Privacy setting? Yes, we added unlisted videos. Private will be added in the future.</p>
-		<p class="blockquote-footer">redst0ne</p>
-		<figure>
+		<p><?php echo $newsandupdates; ?></p>
+		<p class="blockquote-footer"><?php echo $updateauthor;?></p>
+		<!-- <figure>
 		  <blockquote class="blockquote">
 		    <p>cool.</p>
 		  </blockquote>
 		  <figcaption class="blockquote-footer">
 		    msnaero, on <cite title="redst0ne's direct messages">redst0ne's direct messages</cite>
 		  </figcaption>
-		</figure>
+		</figure> -->
 		<hr/>
 		<h3>Featured videos</h3>
 					<p>No featured videos.</p>

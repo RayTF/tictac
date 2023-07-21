@@ -38,15 +38,15 @@
             <form action="" method="POST" enctype="multipart/form-data">
   <div class="form-floating mb-3">
     <input type="text" class="form-control" name="displayname" id="displayname" aria-describedby="emailHelp">
-    <label for="displayname" placeholder="<?php echo $displayname;?>" class="form-label">Display name</label>  
+    <label for="displayname" value="<?php echo $displayname;?>" class="form-label">Display name</label>  
 </div>
 <div class="form-floating mb-3">
     <input type="text" class="form-control" name="bg" id="bg">
-    <label for="bg" placeholder="<?php echo $bg;?>" class="form-label">Channel background (must be external URL)</label>  
+    <label for="bg" value="<?php echo $bg;?>" class="form-label">Channel background (must be external URL)</label>  
 </div>
   <div class="form-floating mb-3">
     <textarea class="form-control" class="form-control" name="description" id="description" style="height: 200px"></textarea>
-    <label for="description" placeholder="<?php echo $desc;?>" class="form-label">Description</label>
+    <label for="description" value="<?php echo $desc;?>" class="form-label">Description</label>
   </div>
   <div class="mb-3">
     <label for="new_pic" class="form-label">Select a profile picture (PNG/GIF/JPG)</label>
