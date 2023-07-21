@@ -117,7 +117,7 @@ echo '<div class="alert alert-success" role="alert">
 <main class="container-fluid mt-3">
     <div class="d-flex flex-row flex-column flex-md-column flex-lg-column flex-xl-row">
       <div class="w-100 mx-auto mx-lg-auto mx-xl-0">
-      <vm-player style="--vm-player-theme: #0078fa">
+      <vm-player style="--vm-player-theme: #FF7F00">
       <vm-video cross-origin="true" poster="/content/thumb/'.$_GET['v'].'.jpg">
         <source data-src="/content/video/'.$_GET['v'].'.mp4" type="video/mp4" />
       </vm-video>
