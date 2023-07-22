@@ -117,7 +117,7 @@
 				<div class="caption">
                     <?php
 					echo '<h3>Uploaded by '.$display.'</h3>';
-                    $statement = $mysqli->prepare("SELECT * FROM `videos` WHERE `author` = ? AND `privacy` = 'public'");
+                    $statement = $mysqli->prepare("SELECT * FROM `videos` WHERE `author` = ? AND `privacy` = 'public' ORDER BY DESC");
                     $statement->bind_param("s", $_GET['name']);
                     $statement->execute();
                     $result = $statement->get_result();
